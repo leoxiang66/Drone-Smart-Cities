@@ -3,12 +3,17 @@ package environment
 import (
     "math/rand/v2"
     "time"
-
     "gonum.org/v1/gonum/stat/distuv"
 )
 
+type Flight struct{
+	A District
+	B District
+	Time_ time.Duration
+}
+
 // SampleFlight 从 DISTRICTS 中随机抽取两个不同区，并随机生成飞行时长（10–60 分钟）
-func SampleFlight() ([]District, time.Duration) {
+func SampleFlight() Flight {
     n := len(DISTRICTS)
 
     // 用当前时间戳做种子
@@ -39,5 +44,9 @@ func SampleFlight() ([]District, time.Duration) {
     minutes := durationDist.Rand()
     duration := time.Duration(minutes) * time.Minute
 
-    return []District{DISTRICTS[int(i)], DISTRICTS[int(j)]}, duration
+	return Flight {
+		A: DISTRICTS[int(i)],
+		B: DISTRICTS[int(j)],
+		Time_: duration,
+	}
 }
