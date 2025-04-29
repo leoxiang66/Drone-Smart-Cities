@@ -17,8 +17,8 @@ func assign_flights() {
 
 	// 飞行时长服从 10 到 60 分钟的均匀分布
 	sleepTimeSampler := distuv.Uniform{
-		Min: 5,
-		Max: 10,
+		Min: 0,
+		Max: 5,
 		Src: rnd,
 	}
 	for {
