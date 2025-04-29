@@ -5,7 +5,7 @@ go 1.23.2
 toolchain go1.23.4
 
 require (
-	github.com/leoxiang66/Drone-Smart-Cities v0.0.0-20250429033402-b048081afc10
+	github.com/leoxiang66/Drone-Smart-Cities v0.0.0-20250429073010-772e41e4b03b
 	github.com/wailsapp/wails/v2 v2.10.1
 )
 
