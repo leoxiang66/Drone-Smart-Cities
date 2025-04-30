@@ -25,10 +25,10 @@
         ...drones,
         {
           id: nextId++,
-          sx: -50 + "vw",
-          sy: -50 + "vh",
-          ex: 50 + "vw",
-          ey: 50 + "vh",
+          sx: -30 + "vw",
+          sy: -30 + "vh",
+          ex: 30 + "vw",
+          ey: 30 + "vh",
         },
       ];
 
@@ -71,16 +71,18 @@
 <style>
   .drone {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background: red;
-    border-radius: 100%;
-    animation: fly 30s linear forwards;
+    width: 40px;
+    height: 40px;
+    background: url("/drone.svg") no-repeat center center;
+    /* 保持等比放大缩小到容器大小 */
+    background-size: contain;
+    animation: fly 10s linear forwards;
     /* 初始放在 var(--sx),var(--sy) ： */
     /* left: var(--sx);
     top: var(--sy); */
     transform: translate(var(--sx), var(--sy));
     opacity: 100;
+    
   }
 
   @keyframes fly {

@@ -1,27 +1,26 @@
 <script>
-  import { page_idx,isDark } from "../stores";
+  import { page_idx, isDark } from "../stores";
   import { Layers, Cuboid, ChartLine, GithubIcon } from "@lucide/svelte";
 
   // 每次 isDark 变化，都同步写到 localStorage，顺带把 data-theme / class 切过去
   isDark.subscribe((dark) => {
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    localStorage.setItem("theme", dark ? "dark" : "light");
     // 如果你用的是 Tailwind CSS 原生 dark 模式：
     if (dark) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
     // 如果你用的是 DaisyUI 主题切换（data-theme）：
     // document.documentElement.setAttribute('data-theme', dark ? 'synthwave' : 'light');
   });
-
 </script>
 
 <div class="flex">
   <div class="ml-2 flex flex-col items-center h-full w-[70px]">
     <div class="p-6 pt-10">
       <div class="pl-1 w-16">
-        <img src="/box.png" alt="avatar" class="w-14" />
+        <img src="/drone.svg" alt="avatar" class="w-14" />
       </div>
     </div>
 
@@ -64,8 +63,10 @@
       </button>
     </a>
 
-    <label class="border border-black dark:border-white toggle text-base-content mb-6">
-      <input type="checkbox" value="synthwave" bind:checked={$isDark}/>
+    <label
+      class="border border-black dark:border-white toggle text-base-content mb-6"
+    >
+      <input type="checkbox" value="synthwave" bind:checked={$isDark} />
 
       <svg
         aria-label="sun"
