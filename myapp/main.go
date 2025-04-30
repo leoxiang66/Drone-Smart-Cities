@@ -24,7 +24,7 @@ func main() {
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:             "Latex Tool",
+		Title:             "DroneHK",
 		Width:             1400,
 		Height:            900,
 		MinWidth:          1400,
@@ -35,19 +35,19 @@ func main() {
 		Fullscreen:        false,
 		Frameless:         false,
 		StartHidden:       false,
-		HideWindowOnClose: false,
+		HideWindowOnClose: true,
 		BackgroundColour:  &options.RGBA{R: 255, G: 255, B: 255, A: 255},
-		AssetServer:       &assetserver.Options{
+		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
-		Menu:              nil,
-		Logger:            nil,
-		LogLevel:          logger.DEBUG,
-		OnStartup:         app.startup,
-		OnDomReady:        app.domReady,
-		OnBeforeClose:     app.beforeClose,
-		OnShutdown:        app.shutdown,
-		WindowStartState:  options.Normal,
+		Menu:             nil,
+		Logger:           nil,
+		LogLevel:         logger.DEBUG,
+		OnStartup:        app.startup,
+		OnDomReady:       app.domReady,
+		OnBeforeClose:    app.beforeClose,
+		OnShutdown:       app.shutdown,
+		WindowStartState: options.Normal,
 		Bind: []interface{}{
 			app,
 		},
@@ -58,7 +58,7 @@ func main() {
 			DisableWindowIcon:    false,
 			// DisableFramelessWindowDecorations: false,
 			WebviewUserDataPath: "",
-			ZoomFactor: 1.0,
+			ZoomFactor:          1.0,
 		},
 		// Mac platform specific options
 		Mac: &mac.Options{
@@ -74,8 +74,8 @@ func main() {
 			WebviewIsTransparent: true,
 			WindowIsTranslucent:  true,
 			About: &mac.AboutInfo{
-				Title:   "Latex Tool",
-				Message: "Latex Tool is helper application for latex, developed by leoxiang66.",
+				Title:   "DroneHK",
+				Message: "DroneHK is a drone simulation app (Hong Kong), developed by leoxiang66.",
 				Icon:    icon,
 			},
 		},
